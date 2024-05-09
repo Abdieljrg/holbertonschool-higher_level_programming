@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 def islower(c):
-    mayusculas = 'QWERTYUIOPASDFGHJKLZXCVBNM'
     minusculas = 'qwertyuiopasdfghjklzxcvbnm'
+    if not c:
+        return False
     if c in minusculas:
         return True
     else:
