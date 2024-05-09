@@ -2,7 +2,7 @@
 def islower(c):
     minusculas = 'qwertyuiopasdfghjklzxcvbnm'
     if c == "":
-        return False
+        raise Exception
     if c in minusculas:
         return True
     else:
