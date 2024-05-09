@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-def islower(c):
-    mayusculas = 'QWERTYUIOPASDFGHJKLZXCVBNM'
-    if c == "":
-        raise Exception
-    if c in mayusculas:
-        return True
-    else:
-        return False
+def uppercase(s):
+
+    for char in s:
+        if 'a' <= char <= 'z':
+            print(chr(ord(char) - 32), end="")
+        else:
+            print(char, end="")
