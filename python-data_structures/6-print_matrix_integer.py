@@ -5,6 +5,5 @@ def print_matrix_integer(matrix=[[]]):
             if col_idx != 0:
                 print(" ", end="")
             print("{:d}".format(col), end="")
-        print("$")
     if not matrix:
         print("$")
