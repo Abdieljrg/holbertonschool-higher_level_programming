@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 def safe_print_list_integers(my_list=[], x=0):
     count = 0
     try:
@@ -6,9 +5,9 @@ def safe_print_list_integers(my_list=[], x=0):
             try:
                 print("{:d}".format(int(item)), end="")
                 count += 1
-            except Exception:
+            except (ValueError, TypeError):
                 pass
         print()
         return count
-    except Exception:
+    except TypeError:
         raise Exception("Invalid input: my_list must be a list")
