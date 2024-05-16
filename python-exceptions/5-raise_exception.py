@@ -5,6 +5,7 @@ def raise_exception():
     except TypeError as te:
         raise te
 
+
 if __name__ == "__main__":
     try:
         raise_exception()
