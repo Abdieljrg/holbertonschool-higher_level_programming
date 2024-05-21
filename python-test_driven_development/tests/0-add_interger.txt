@@ -1,0 +1,59 @@
+>>> 0-add_interger = __import__('0-add_interger').add_interger
+
+# test two intergers
+>>> add_interger(5, 9)
+14
+
+# Test with int and default parameter
+>>> add_integer(2)
+100
+
+# Test with floats converted to integers
+>>> add_integer(3.9, 3.1)
+7
+
+# Test negative numbers
+>>> add_integer(-2, -1)
+-3
+
+# Test zero
+>>> add_integer(0, 0)
+0
+
+# Test with float and int
+>>> add_integer(3.5, 4)
+7
+
+# Type error: string as 1st parameter
+>>> add_integer("name", 100)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+# Type error: string as 2nd parameter
+>>> add_integer(100, "name")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+# Test with large integers
+>>> add_integer(5000000, 2000000)
+7000000
+
+# Test Overflow != float infinity
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+
+# Test None
+>>> add_integer(None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+# Test undifine flow
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
