@@ -8,16 +8,15 @@ class Rectangle:
     """
     function to the rectangle
     """
-    pass
 
     def __init__(self, width=0, height=0):
-        self.width = width
         self.height = height
+        self.width = width
 
     @property
     def width(self):
         """ this is the width getter / setter"""
-        return (self.width)
+        return (self.__width)
 
     @width.setter
     def width(self, value):
@@ -30,7 +29,7 @@ class Rectangle:
     @property
     def height(self):
         """ this is the height getter / setter"""
-        return (self.height)
+        return (self.__height)
 
     @height.setter
     def height(self, value):
