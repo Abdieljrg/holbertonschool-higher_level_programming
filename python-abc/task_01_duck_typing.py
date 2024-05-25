@@ -15,6 +15,7 @@ class Shape(ABC):
 class Circle(Shape):
     def __init__(self, radius):
         if radius < 0:
+            self.radius = 0
             print("Warning: Radius cannot be negative. Setting radius to 0.")
         else:
             self.radius = radius
