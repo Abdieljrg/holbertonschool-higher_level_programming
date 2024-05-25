@@ -1,4 +1,4 @@
-class CountedIterator(iter):
+class CountedIterator:
 
     def __init__(self, arr):
         """initialize func"""
