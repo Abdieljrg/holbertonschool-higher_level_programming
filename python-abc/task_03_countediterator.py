@@ -21,3 +21,15 @@ class CountedIterator(iter):
     def get_count(self):
         """number of items iterated over."""
         return self.counter
+
+
+iterable = [1, 2, 3, 4, 5]
+counted_iter = CountedIterator(iterable)
+
+try:
+    while True:
+        item = next(counted_iter)
+        print("Item:", item)
+        print("Count:", counted_iter.get_count())
+except StopIteration as e:
+    print(e)
