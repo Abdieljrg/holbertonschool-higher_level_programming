@@ -20,6 +20,7 @@ class Circle(Shape):
             print("Warning: Radius cannot be negative. Setting radius to 0.")
         else:
             self.radius = radius
+            self.actual_radius = radius
 
     def area(self):
         return math.pi * self.radius ** 2
