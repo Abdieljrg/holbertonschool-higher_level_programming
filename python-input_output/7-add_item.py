@@ -11,17 +11,13 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 # the file for saving
 filename = "add_item.json"
 
-try:
-    # existing data to file
+if exists(filename):
     items = load_from_json_file(filename)
-except (FileNotFoundError, json.JSONDecodeError):
-    """If the file doesn't exist or contains invalid JSON,
-    start with an empty list"""
+else:
     items = []
 
-"""Extend the list with the arguments provided on the
-command line (excluding the script name)"""
+# Add all command-line arguments to the list
 items.extend(sys.argv[1:])
 
-# Saving list
+# Save the updated list to the file
 save_to_json_file(items, filename)
