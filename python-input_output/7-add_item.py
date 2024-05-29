@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """scrip that adds all arguments to list and save """
+
+
 import sys
 
 
