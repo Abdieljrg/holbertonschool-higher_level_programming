@@ -3,20 +3,21 @@
 
 
 import sys
+from os.path import exists
 
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-if __name__ == "__main__":
-    save_to_json = __import__('5-save_to_json_file').save_to_json_file
-    load_from_json = __import__('6-load_from_json_file').load_from_json_file
+filename = "add_item.json"
 
-    """loads and save"""
+# Load existing data from the file if it exists
+if exists(filename):
+    items = load_from_json_file(filename)
+else:
+    items = []
 
-try:
-    data = load_from_json("add_item.json")
-except FileNotFoundError:
-    data = []
+# Add all command-line arguments to the list
+items.extend(sys.argv[1:])
 
-for arg in sys.argv[1:]:
-    data.append(arg)
-
-save_to_json(data, "add_item.json")
+# Save the updated list to the file
+save_to_json_file(items, filename)
