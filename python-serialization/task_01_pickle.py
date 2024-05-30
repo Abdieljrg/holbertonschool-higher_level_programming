@@ -24,9 +24,8 @@ class CustomObject:
 
         """ serializing"""
 
-        diccionario = self.__dict__
         with open(filename, 'wb') as file:
-            pickle.dump(diccionario, file)
+            pickle.dump(self, file)
 
     @classmethod
     def deserialize(cls, filename):
@@ -35,5 +34,4 @@ class CustomObject:
 
         with open(filename, 'rb') as file:
             saving = pickle.load(file)
-        dummy = CustomObject(saving.name, saving.age, saving.is_student)
-        return(dummy)
+        return(saving)
