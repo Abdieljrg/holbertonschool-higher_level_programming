@@ -1,2 +1,2 @@
---list all the tables in a specified database fj
+--list all the tables in a specified database
 SHOW TABLES;
